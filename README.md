@@ -1,6 +1,6 @@
 # Memory-Allocation-Simulator
 
-This project is a Memory Allocation Simulator developed as part of an Operating Systems course (2CS506CC23) by Dhawal Khandelwal (23btm032) and Krish Chaplot (23btm034). It demonstrates how memory is dynamically allocated to processes using four classic allocation algorithms:
+This project is a Memory Allocation Simulator developed as part of an Operating Systems course by Dhawal Khandelwal . It demonstrates how memory is dynamically allocated to processes using four classic allocation algorithms:
 
 First Fit
 
