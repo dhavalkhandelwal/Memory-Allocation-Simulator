@@ -34,3 +34,13 @@ Static vs. Dynamic Allocation
 Fragmentation handling in various fit strategies
 
 Multiprogramming and memory efficiency
+
+📸 Screenshots
+
+![image](https://github.com/user-attachments/assets/48787273-8f83-477a-90e4-a9ead3f638d1)
+
+![image](https://github.com/user-attachments/assets/3a1da1bb-4d47-472a-bd1f-f9782d7c8a63)
+
+
+
+
