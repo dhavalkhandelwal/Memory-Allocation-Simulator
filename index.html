@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Memory Allocation Simulator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 10px;
+    }
+    
+    .memory-block {
+      height: 50px;
+      margin: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      transition: all 0.3s;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    
+    .memory-free {
+      background-color: #27ae60;
+    }
+    
+    .memory-allocated {
+      background-color: #e74c3c;
+    }
+    
+    .memory-container {
+      border: 1px solid #ddd;
+      background-color: #fdfdfd;
+      border-radius: 5px;
+      margin-top: 20px;
+      padding: 15px;
+      min-height: 100px;
+    }
+    
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin: 0 12px;
+    }
+    
+    .legend-color {
+      width: 20px;
+      height: 15px;
+      margin-right: 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Memory Allocation Simulator</h2>
+    
+    <!-- Memory Block Input -->
+    <div class="card mb-3">
+      <div class="card-header bg-light">
+        <h5 class="mb-0">Memory Blocks</h5>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="memoryInput">Enter memory block sizes (comma separated in KB):</label>
+          <input type="text" class="form-control mb-2" id="memoryInput" placeholder="e.g., 100,200,300,150,180">
+        </div>
+        <button class="btn btn-primary" onclick="setupMemory()">Set Memory</button>
+      </div>
+    </div>
+    
+    <!-- Process Input -->
+    <div class="card mb-3">
+      <div class="card-header bg-light">
+        <h5 class="mb-0">Process Allocation</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="algorithmSelect">Algorithm:</label>
+            <select class="form-select" id="algorithmSelect">
+              <option value="firstFit">First Fit</option>
+              <option value="bestFit">Best Fit</option>
+              <option value="worstFit">Worst Fit</option>
+              <option value="nextFit">Next Fit</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Process Sizes:</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="processInput" placeholder="e.g., 50,120,35,70">
+              <button class="btn btn-primary" onclick="allocateProcesses()">Allocate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Memory Visualization -->
+    <div class="card mb-3">
+      <div class="card-header bg-light">
+        <h5 class="mb-0">Memory Allocation Visualization</h5>
+      </div>
+      <div class="card-body">
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #27ae60;"></div>
+            <span>Free Memory</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #e74c3c;"></div>
+            <span>Allocated Memory</span>
+          </div>
+        </div>
+        
+        <div class="memory-container" id="memoryContainer">
+          <div class="text-center text-muted">
+            Enter memory block sizes and click "Set Memory" to start
+          </div>
+        </div>
+        
+        <div id="allocationDetails" class="mt-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="C:\Users\dhava\OneDrive\Desktop\OS_inno\script.js"></script>
+</body>
+</html>
